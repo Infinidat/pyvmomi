@@ -558,7 +558,7 @@ def __FindSupportedVersion(protocol, server, port, path, preferredApiVersions, s
 
 def SmartConnect(protocol='https', host='localhost', port=443, user='root', pwd='',
                  service="hostd", path="/sdk",
-                 preferredApiVersions=None, sslContext=None):
+                 preferredApiVersions=None, sslContext=None, keyFile=None, certFile=None):
    """
    Determine the most preferred API version supported by the specified server,
    then connect to the specified server using that API version, login and return
@@ -594,6 +594,10 @@ def SmartConnect(protocol='https', host='localhost', port=443, user='root', pwd=
    @param sslContext: SSL Context describing the various SSL options. It is only
                       supported in Python 2.7.9 or higher.
    @type  sslContext: SSL.Context
+   @param keyFile: ssl key file path
+   @type  keyFile: string
+   @param certFile: ssl cert file path
+   @type  certFile: string
    """
 
    if preferredApiVersions is None:
@@ -616,9 +620,12 @@ def SmartConnect(protocol='https', host='localhost', port=443, user='root', pwd=
                   pwd=pwd,
                   service=service,
                   adapter='SOAP',
+                  path=path,
                   version=supportedVersion,
                   path=path,
-                  sslContext=sslContext)
+                  sslContext=sslContext,
+                  keyFile=keyFile,
+                  certFile=certFile)
 
 def OpenUrlWithBasicAuth(url, user='root', pwd=''):
    """
