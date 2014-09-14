@@ -1583,22 +1583,6 @@ def TypeDefExists(name):
       actualName = _GetActualName(name)
    return actualName is not None
 
-# Thread local for req context
-_threadLocalContext = threading.local()
-
-# Get the RequestContext for the current thread
-#
-def GetRequestContext():
-   """ Get the RequestContext for the current thread """
-   global _threadLocalContext
-   return _threadLocalContext.__dict__.setdefault('reqCtx', StringDict())
-
-# Get the Http context for the current thread
-#
-def GetHttpContext():
-   """ Get the Http context for the current thread """
-   global _threadLocalContext
-   return _threadLocalContext.__dict__.setdefault('httpCtx', dict())
 
 ## Class that resolves links
 class LinkResolver:
