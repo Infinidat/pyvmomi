@@ -620,7 +620,6 @@ def SmartConnect(protocol='https', host='localhost', port=443, user='root', pwd=
                   pwd=pwd,
                   service=service,
                   adapter='SOAP',
-                  path=path,
                   version=supportedVersion,
                   path=path,
                   sslContext=sslContext,
