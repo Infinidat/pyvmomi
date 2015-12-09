@@ -434,10 +434,7 @@ def __GetElementTreeFromUrl(url, sslContext):
    """
 
    try:
-      if sslContext is not None and sslContext.verify_mode == ssl.CERT_NONE:
-         sock = requests.get(url, verify=False)
-      else:
-         sock = requests.get(url)
+      sock = requests.get(url, verify=False)
       if sock.status_code == 200:
          tree = ElementTree.fromstring(sock.content)
          return tree
