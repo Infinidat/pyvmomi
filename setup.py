@@ -29,7 +29,7 @@ with open('test-requirements.txt') as f:
 
 setup(
    name='pyvmomi',
-   version='6.0.0.2016.4',
+   version='6.0.0.3',
    description='VMware vSphere Python SDK',
    # NOTE: pypi prefers the use of RST to render docs
    long_description=read('README.rst'),
@@ -51,7 +51,7 @@ setup(
       'Programming Language :: Python :: 3',
       'Programming Language :: Python :: 3.2',
       'Programming Language :: Python :: 3.3',
-      'Programming Language :: Python :: 3.4',      
+      'Programming Language :: Python :: 3.4',
       'Topic :: Software Development :: Libraries :: Python Modules',
       'Topic :: System :: Distributed Computing',
       'Operating System :: Microsoft :: Windows',
